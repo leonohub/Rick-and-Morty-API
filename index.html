@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick And Morty</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1>Rick and Morty</h1>
-    <input type="text" id="name" name="nameResearch" placeholder="Escreva aqui o nome de um personagem(em inglês)">
-    <button onclick="searchCharacter()">Pesquisar</button>
-
+    <div id="title">
+        <h1>Rick and Morty</h1>
+    </div>
+    <div id="inputButton">
+        <input type="text" id="name" name="nameResearch" placeholder="Escreva aqui o nome de um personagem (em inglês)", onkeypress="handleKeyPress(event)">
+        <button onclick="searchCharacter()">Pesquisar</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -34,22 +34,22 @@ function createCharacterElements(name, image, gender, species, status) {
 
     let pName = document.createElement('p');
     pName.id = 'character-name';
-    pName.innerHTML = name;
+    pName.innerHTML = `${name}`;
 
     let img = document.createElement('img');
     img.id = 'character-img';
     img.src = image;
 
     let pGender = document.createElement('p');
-    pGender.innerHTML = gender;
+    pGender.innerHTML = `Genero: ${gender}`;
     pGender.id = 'character-gender';
 
     let pSpecies = document.createElement('p');
-    pSpecies.innerHTML = species;
+    pSpecies.innerHTML = `Espécie: ${species}`;
     pSpecies.id = 'character-species';
 
     let pStatus = document.createElement('p');
-    pStatus.innerHTML = status;
+    pStatus.innerHTML = `Status: ${status}`;
     pStatus.id = 'character-status';
 
     div.appendChild(pName);
@@ -59,4 +59,10 @@ function createCharacterElements(name, image, gender, species, status) {
     div.appendChild(pStatus);
 
     body.appendChild(div);
+}
+
+function handleKeyPress(event) {   
+    if (event.key === 'Enter') {
+        searchCharacter()
+    }        
 }
