@@ -1,6 +1,18 @@
 async function searchCharacter() {
     const input = document.getElementById('name').value;
 
+    if (input === '') {
+        let pError = document.getElementById('error')
+        pError.innerHTML = 'Digite o nome de um personagem'
+        clearElements()
+
+        setTimeout(() => {
+            pError.innerHTML = ''
+        }, 3000)
+
+        return;
+    }
+
     let url;
     if (!isNaN(parseInt(input))) {
         url = `https://rickandmortyapi.com/api/character/${parseInt(input)}`;
@@ -19,6 +31,9 @@ async function searchCharacter() {
         } else if (data.id) {
             createCharacterElements(data.name, data.image, data.gender, data.species, data.status);
         } else {
+            let pError = document.getElementById('error')
+            pError.innerHTML = "Nenhum personagem encontrado"
+            clearElements()
             console.log('Character not found');
         }
     } catch (error) {
@@ -29,40 +44,43 @@ async function searchCharacter() {
 const body = document.querySelector('body');
 
 function createCharacterElements(name, image, gender, species, status) {
-    let div = document.createElement('div');
-    div.id = 'character-div';
-
-    let pName = document.createElement('p');
-    pName.id = 'character-name';
+    let pName = document.getElementById('pName');
     pName.innerHTML = `${name}`;
 
-    let img = document.createElement('img');
-    img.id = 'character-img';
-    img.src = image;
+    let img = document.getElementById('img');
+    img.style.backgroundImage = `url(${image})`;
+    
 
-    let pGender = document.createElement('p');
+    let pGender = document.getElementById('pGender');
     pGender.innerHTML = `Genero: ${gender}`;
-    pGender.id = 'character-gender';
 
-    let pSpecies = document.createElement('p');
+    let pSpecies = document.getElementById('pSpecies');
     pSpecies.innerHTML = `Espécie: ${species}`;
-    pSpecies.id = 'character-species';
 
-    let pStatus = document.createElement('p');
+    let pStatus = document.getElementById('pStatus');
     pStatus.innerHTML = `Status: ${status}`;
-    pStatus.id = 'character-status';
-
-    div.appendChild(pName);
-    div.appendChild(img);
-    div.appendChild(pGender);
-    div.appendChild(pSpecies);
-    div.appendChild(pStatus);
-
-    body.appendChild(div);
 }
 
 function handleKeyPress(event) {   
     if (event.key === 'Enter') {
         searchCharacter()
     }        
+}
+
+function clearElements() {
+    let pName = document.getElementById('pName');
+    pName.innerHTML = '';
+
+    let img = document.getElementById('img');
+    img.style.backgroundImage = `none`
+    
+
+    let pGender = document.getElementById('pGender');
+    pGender.innerHTML = ``;
+
+    let pSpecies = document.getElementById('pSpecies');
+    pSpecies.innerHTML = ``;
+
+    let pStatus = document.getElementById('pStatus');
+    pStatus.innerHTML = ``;
 }

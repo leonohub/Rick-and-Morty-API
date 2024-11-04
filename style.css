@@ -1,12 +1,67 @@
-*{
+* {
     overflow-x: hidden;
     font-family: sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-/* body{
+#title {
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputButton {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s;
+}
+
+#img:hover {
+    width: 220px;
+    height: 220px;
+}
+
+input {
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 400px;
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+input:focus {
+    color: white;
+    border: 1px solid white;
+    background-color: rgb(32, 32, 32);
+}*{
+    overflow-x: hidden;
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
     background-image: url(backgroundImage.jpg);
     background-size: cover;    
-} */
+}
 
 #title{
     height: 100px;
@@ -26,8 +81,12 @@
 }
 
 img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    border: none;
+    background-size: cover;
+    background-position: center;
 }
 
 input{
@@ -65,4 +124,48 @@ button{
 
 button:hover{
     background-color: rgb(97, 97, 97);
+}
+
+#elements{
+    width: 100vw;
+    height: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.element{
+    margin: 5px;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+button {
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(43, 43, 43);
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: rgb(97, 97, 97);
+}
+
+#elements {
+    width: 100vw;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.element {
+    margin: 5px;
 }

@@ -11,9 +11,20 @@
         <h1>Rick and Morty</h1>
     </div>
     <div id="inputButton">
-        <input type="text" id="name" name="nameResearch" placeholder="Escreva aqui o nome de um personagem (em inglês)", onkeypress="handleKeyPress(event)">
+        <input type="text" id="name" name="nameResearch" placeholder="Escreva aqui o nome de um personagem (em inglês)" onkeypress="handleKeyPress(event)">
         <button onclick="searchCharacter()">Pesquisar</button>
     </div>
+
+    <div id="elements">
+        <p id="pName" class="element"></p>
+        <div id="img" class="element"></div>
+        <p id="pGender" class="element"></p>
+        <p id="pSpecies" class="element"></p>
+        <p id="pStatus" class="element"></p>
+
+        <p id="error"></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
