@@ -28,8 +28,13 @@ async function searchCharacter() {
         if (data.results && data.results.length > 0) {
             const character = data.results[0];
             createCharacterElements(character.name, character.image, character.gender, character.species, character.status);
+            let pError = document.getElementById('error')
+            pError.innerHTML = ''
+
         } else if (data.id) {
             createCharacterElements(data.name, data.image, data.gender, data.species, data.status);
+            let pError = document.getElementById('error')
+            pError.innerHTML = ''
         } else {
             let pError = document.getElementById('error')
             pError.innerHTML = "Nenhum personagem encontrado"
